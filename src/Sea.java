@@ -3,16 +3,17 @@ public class Sea extends AbstractSM {
     private double seaArea;
 
     Sea(double seaLevel, double seaArea, AbstractWorld w){
-        super(w);
+        super(w, "Sea");
         this.seaLevel = seaLevel;
         this.seaArea = seaArea;
     }
 
+    public double getSeaLevel(){ return this.seaLevel; }
+
+    public double getSeaArea(){ return this.seaArea; }
 
     @Override
-    AbstractSM clone(AbstractWorld w) {
-        return new Sea(this.seaLevel, this.seaArea, w);
-    }
+    public AbstractSM clone() { return new Sea(this.seaLevel, this.seaArea, this.worldReference); }
 
     @Override
     public void tick() {
@@ -21,7 +22,5 @@ public class Sea extends AbstractSM {
     }
 
     @Override
-    public String toString(){
-        return String.format("{Sea: seaLevel: %.2f, seaArea: %.2f", seaLevel, seaArea);
-    }
+    public String toString(){ return String.format("{seaLevel: %.2f, seaArea: %.2f}", seaLevel, seaArea); }
 }
