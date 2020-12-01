@@ -4,9 +4,9 @@ public class Main {
         World newWorld = initializeWorld();
 
         System.out.println(newWorld);
-        for(int i = 0; i < 20; i++){
+        for(int i = 0; i < 40; i++){
             newWorld = newWorld.tick();
-            System.out.println(newWorld);
+            System.out.println(newWorld.statisticString());
         }
 
     }

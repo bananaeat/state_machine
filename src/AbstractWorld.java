@@ -11,6 +11,10 @@ public abstract class AbstractWorld {
         this.listSM = new HashMap<>();
     }
 
+    public void addSM(AbstractSM o){ listSM.put(o.label, o); }
+
+    public void removeSM(String label){ listSM.remove(label); }
+
     public abstract AbstractWorld clone();
     public abstract AbstractWorld tick();
     public abstract AbstractSM getSM(String label);

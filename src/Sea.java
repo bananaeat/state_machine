@@ -22,5 +22,8 @@ public class Sea extends AbstractSM {
     }
 
     @Override
+    public void affect() {}
+
+    @Override
     public String toString(){ return String.format("{seaLevel: %.2f, seaArea: %.2f}", seaLevel, seaArea); }
 }

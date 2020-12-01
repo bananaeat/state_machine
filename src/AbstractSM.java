@@ -9,6 +9,7 @@ public abstract class AbstractSM {
 
     public abstract AbstractSM clone();
     public abstract void tick();
+    public abstract void affect();
     public abstract String toString();
     public void updateWorldReference(AbstractWorld w) { this.worldReference = w; }
 }
